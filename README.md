@@ -25,7 +25,7 @@ CineVault est une application web moderne de découverte de films qui permet aux
 
 ## 🚀 Démo en ligne
 
-[Voir la démo](https://votre-username.github.io/cinevault/)
+[Voir la démo](https://melvin-phyllis.github.io/CineVault/)
 
 ## 💻 Installation locale
 
