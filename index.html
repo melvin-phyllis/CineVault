@@ -16,11 +16,21 @@
                     <input type="text" id="searchInput" placeholder="Rechercher un film...">
                     <button class="search-btn" onclick="searchMovies()">🔍</button>
                 </div>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" onclick="filterMovies('popular')">Populaires</button>
-                    <button class="filter-btn" onclick="filterMovies('top_rated')">Mieux notés</button>
-                    <button class="filter-btn" onclick="filterMovies('upcoming')">À venir</button>
-                    <button class="filter-btn" onclick="filterMovies('now_playing')">À l'affiche</button>
+                <div class="controls">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterMovies('popular')">Populaires</button>
+                        <button class="filter-btn" onclick="filterMovies('top_rated')">Mieux notés</button>
+                        <button class="filter-btn" onclick="filterMovies('upcoming')">À venir</button>
+                        <button class="filter-btn" onclick="filterMovies('now_playing')">À l'affiche</button>
+                    </div>
+                    <div class="theme-controls">
+                        <button id="themeToggle" class="theme-btn" onclick="toggleTheme()">
+                            <span id="themeIcon">🌙</span>
+                        </button>
+                        <button id="aboutBtn" class="about-btn" onclick="openAbout()">
+                            👨‍💻
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,9 +87,105 @@
         </div>
     </div>
 
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content about-modal">
+            <div class="about-header">
+                <button class="modal-close" onclick="closeAbout()">&times;</button>
+                <div class="about-hero">
+                    <div class="profile-section">
+                        <div class="profile-avatar">
+                            <span class="avatar-emoji">👨‍💻</span>
+                        </div>
+                        <div class="profile-info">
+                            <h2>Akou Melvin</h2>
+                            <p class="title">Développeur Full Stack</p>
+                            <div class="location">📍 Côte d'Ivoire</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-body">
+                <div class="about-section">
+                    <h3>🎓 Formation</h3>
+                    <p>Étudiant à l'<strong>Université Virtuelle de Côte d'Ivoire</strong></p>
+                    <p>Formation <strong>Développeur Logiciel Full Stack</strong></p>
+                </div>
+                
+                <div class="about-section">
+                    <h3>💼 Spécialisation</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Applications Web</span>
+                        <span class="skill-tag">E-Services</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h3>🚀 À propos de CineVault</h3>
+                    <p>CineVault est un projet personnel développé pour démontrer mes compétences en développement web moderne. L'application utilise l'API TMDB pour offrir une expérience cinématographique immersive avec une interface élégante et responsive.</p>
+                </div>
+
+                <div class="about-section">
+                    <h3>🛠️ Technologies utilisées</h3>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <span class="tech-icon">🌐</span>
+                            <span>HTML5 / CSS3</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">⚡</span>
+                            <span>JavaScript ES6+</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🎨</span>
+                            <span>CSS Grid & Flexbox</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">📱</span>
+                            <span>Design Responsive</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">🔌</span>
+                            <span>TMDB API</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-icon">✨</span>
+                            <span>Animations CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h3>🎯 Vision</h3>
+                    <p>Passionné par l'innovation technologique, je m'efforce de créer des solutions numériques qui améliorent l'expérience utilisateur tout en respectant les meilleures pratiques du développement web.</p>
+                </div>
+
+                <div class="contact-section">
+                    <h3>📫 Contact</h3>
+                    <p>Intéressé par une collaboration ou souhaitez en savoir plus sur mes projets ?</p>
+                    <div class="contact-buttons">
+                        <button class="contact-btn">
+                            <span>📧</span> Email
+                        </button>
+                        <button class="contact-btn">
+                            <span>💼</span> LinkedIn
+                        </button>
+                        <button class="contact-btn">
+                            <span>🐙</span> GitHub
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
-        <p>© 2024 CineVault - Créé avec ❤️ et l'API TMDB</p>
+        <p>© 2025 CineVault - Créé avec ❤️ par <strong>Akou Melvin</strong> | Powered by TMDB API</p>
     </footer>
 
     <script src="script.js"></script>

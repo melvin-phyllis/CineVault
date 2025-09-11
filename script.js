@@ -5,6 +5,7 @@ const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
 
 let currentCategory = 'popular';
 let allMovies = [];
+let currentTheme = 'dark';
 
 // Données de démonstration (utilisées si l'API ne fonctionne pas)
 const demoMovies = [
@@ -103,6 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Test de connexion à l'API
     console.log('🎬 CineVault - Initialisation...');
     console.log('🔑 Clé API configurée:', API_KEY.substring(0, 8) + '...');
+    
+    // Initialiser le thème
+    initializeTheme();
     
     // Charger les films populaires au démarrage
     loadMovies('popular');
@@ -299,13 +303,6 @@ function closeModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Fermer le modal en cliquant en dehors
-window.onclick = function(event) {
-    const modal = document.getElementById('movieModal');
-    if (event.target == modal) {
-        closeModal();
-    }
-}
 
 // Mettre à jour les statistiques
 function updateStats() {
@@ -316,3 +313,56 @@ function updateStats() {
     
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 }
+
+// Gestion du thème
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('cinevault-theme') || 'dark';
+    currentTheme = savedTheme;
+    applyTheme(currentTheme);
+}
+
+function toggleTheme() {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(currentTheme);
+    localStorage.setItem('cinevault-theme', currentTheme);
+}
+
+function applyTheme(theme) {
+    const body = document.body;
+    const themeIcon = document.getElementById('themeIcon');
+    
+    if (theme === 'light') {
+        body.setAttribute('data-theme', 'light');
+        themeIcon.textContent = '☀️';
+    } else {
+        body.removeAttribute('data-theme');
+        themeIcon.textContent = '🌙';
+    }
+}
+
+// Gestion du modal À propos
+function openAbout() {
+    const modal = document.getElementById('aboutModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeAbout() {
+    const modal = document.getElementById('aboutModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Fermer le modal About en cliquant en dehors
+window.addEventListener('click', function(event) {
+    const aboutModal = document.getElementById('aboutModal');
+    const movieModal = document.getElementById('movieModal');
+    
+    if (event.target === aboutModal) {
+        closeAbout();
+    }
+    
+    if (event.target === movieModal) {
+        closeModal();
+    }
+});
