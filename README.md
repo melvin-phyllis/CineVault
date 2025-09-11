@@ -50,9 +50,12 @@ Ou simplement double-cliquer sur `index.html`
 ```
 cinevault/
 │
-├── index.html          # Fichier principal avec HTML, CSS et JavaScript
-├── README.md          # Documentation du projet
-└── project-spec.md    # Spécifications techniques
+├── index.html          # Structure HTML principale
+├── styles.css          # Styles et animations CSS
+├── script.js           # Logique JavaScript et API
+├── images/             # Images de fallback
+│   └── placeholder.svg
+└── README.md          # Documentation du projet
 ```
 
 ## 🛠️ Technologies utilisées
@@ -87,12 +90,14 @@ cinevault/
 
 ## 🔧 Configuration API
 
-L'application utilise l'API TMDB pour récupérer les données des films. Si l'API n'est pas disponible, des données de démonstration sont utilisées automatiquement.
+⚠️ **IMPORTANT** : Pour obtenir une clé API TMDB valide :
 
-Pour utiliser votre propre clé API :
-1. Créez un compte sur [TMDB](https://www.themoviedb.org/)
-2. Obtenez votre clé API
-3. Remplacez `API_KEY` dans le code JavaScript
+1. Créez un compte gratuit sur [The Movie Database](https://www.themoviedb.org/)
+2. Allez dans **Settings > API** 
+3. Demandez une clé API gratuite
+4. Dans `script.js` ligne 2, remplacez `YOUR_API_KEY_HERE` par votre clé
+
+L'application fonctionne avec des données de démonstration si l'API n'est pas configurée.
 
 ## 📊 Fonctionnalités détaillées
 

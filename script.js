@@ -1,5 +1,5 @@
 // Configuration API TMDB
-const API_KEY = '8c4b867e95b9419f8e9a2c3e2e6a4b3d'; // Clé API demo
+const API_KEY = '8bc0c1cd570e0fc1b3b4b9894d2db994';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
 
@@ -12,8 +12,8 @@ const demoMovies = [
         id: 1,
         title: "Inception",
         overview: "Dom Cobb est un voleur expérimenté dans l'art de l'extraction, voler les secrets les plus intimes enfouis au plus profond du subconscient durant une phase de rêve.",
-        poster_path: "https://via.placeholder.com/500x750/1a1a2e/e94560?text=Inception",
-        backdrop_path: "https://via.placeholder.com/1280x720/0f3460/e94560?text=Inception+Backdrop",
+        poster_path: "./images/placeholder.svg",
+        backdrop_path: "./images/placeholder.svg",
         release_date: "2010-07-16",
         vote_average: 8.8,
         runtime: 148,
@@ -23,8 +23,8 @@ const demoMovies = [
         id: 2,
         title: "Interstellar",
         overview: "Le film raconte les aventures d'un groupe d'explorateurs qui utilisent une faille récemment découverte dans l'espace-temps afin de repousser les limites humaines.",
-        poster_path: "https://via.placeholder.com/500x750/16213e/e94560?text=Interstellar",
-        backdrop_path: "https://via.placeholder.com/1280x720/0f3460/e94560?text=Interstellar+Backdrop",
+        poster_path: "./images/placeholder.svg",
+        backdrop_path: "./images/placeholder.svg",
         release_date: "2014-11-05",
         vote_average: 8.6,
         runtime: 169,
@@ -34,8 +34,8 @@ const demoMovies = [
         id: 3,
         title: "The Dark Knight",
         overview: "Batman entreprend de démanteler les dernières organisations criminelles de Gotham. Mais il se heurte bientôt à un nouveau génie du crime qui répand la terreur : le Joker.",
-        poster_path: "https://via.placeholder.com/500x750/0f3460/e94560?text=The+Dark+Knight",
-        backdrop_path: "https://via.placeholder.com/1280x720/16213e/e94560?text=Dark+Knight+Backdrop",
+        poster_path: "./images/placeholder.svg",
+        backdrop_path: "./images/placeholder.svg",
         release_date: "2008-07-18",
         vote_average: 9.0,
         runtime: 152,
@@ -45,8 +45,8 @@ const demoMovies = [
         id: 4,
         title: "Pulp Fiction",
         overview: "L'odyssée sanglante et burlesque de petits malfrats dans la jungle de Hollywood à travers trois histoires qui s'entremêlent.",
-        poster_path: "https://via.placeholder.com/500x750/e94560/16213e?text=Pulp+Fiction",
-        backdrop_path: "https://via.placeholder.com/1280x720/e94560/0f3460?text=Pulp+Fiction+Backdrop",
+        poster_path: "./images/placeholder.svg",
+        backdrop_path: "./images/placeholder.svg",
         release_date: "1994-10-14",
         vote_average: 8.9,
         runtime: 154,
@@ -56,8 +56,8 @@ const demoMovies = [
         id: 5,
         title: "The Matrix",
         overview: "Un pirate informatique découvre que la réalité dans laquelle il vit est en fait une simulation créée par des machines.",
-        poster_path: "https://via.placeholder.com/500x750/16213e/00ff00?text=The+Matrix",
-        backdrop_path: "https://via.placeholder.com/1280x720/000000/00ff00?text=Matrix+Backdrop",
+        poster_path: "./images/placeholder.svg",
+        backdrop_path: "./images/placeholder.svg",
         release_date: "1999-03-31",
         vote_average: 8.7,
         runtime: 136,
@@ -67,8 +67,8 @@ const demoMovies = [
         id: 6,
         title: "Gladiator",
         overview: "Le général romain Maximus est le plus fidèle soutien de l'empereur Marc Aurèle. Avant sa mort, l'empereur choisit Maximus pour lui succéder.",
-        poster_path: "https://via.placeholder.com/500x750/8b4513/ffd700?text=Gladiator",
-        backdrop_path: "https://via.placeholder.com/1280x720/8b4513/ffd700?text=Gladiator+Backdrop",
+        poster_path: "./images/placeholder.svg",
+        backdrop_path: "./images/placeholder.svg",
         release_date: "2000-05-05",
         vote_average: 8.5,
         runtime: 155,
@@ -78,8 +78,8 @@ const demoMovies = [
         id: 7,
         title: "Avatar",
         overview: "Sur la lointaine planète de Pandora, Jake Sully, un ancien Marine paralysé, devient mobile à nouveau grâce à un Avatar.",
-        poster_path: "https://via.placeholder.com/500x750/001f3f/00bfff?text=Avatar",
-        backdrop_path: "https://via.placeholder.com/1280x720/001f3f/00bfff?text=Avatar+Backdrop",
+        poster_path: "./images/placeholder.svg",
+        backdrop_path: "./images/placeholder.svg",
         release_date: "2009-12-18",
         vote_average: 7.8,
         runtime: 162,
@@ -89,8 +89,8 @@ const demoMovies = [
         id: 8,
         title: "Fight Club",
         overview: "Un employé de bureau insomniaque et un fabriquant de savon forment un club de combat clandestin qui devient beaucoup plus.",
-        poster_path: "https://via.placeholder.com/500x750/2f2f2f/ff0000?text=Fight+Club",
-        backdrop_path: "https://via.placeholder.com/1280x720/2f2f2f/ff0000?text=Fight+Club+Backdrop",
+        poster_path: "./images/placeholder.svg",
+        backdrop_path: "./images/placeholder.svg",
         release_date: "1999-10-15",
         vote_average: 8.8,
         runtime: 139,
@@ -191,7 +191,7 @@ function displayMovies(movies) {
                 posterSrc = `${IMAGE_BASE_URL}/w500${movie.poster_path}`;
             }
         } else {
-            posterSrc = `https://via.placeholder.com/500x750/1a1a2e/e94560?text=${encodeURIComponent(movie.title || 'Film')}`;
+            posterSrc = './images/placeholder.svg';
         }
         
         // Formatage de la date
@@ -207,7 +207,7 @@ function displayMovies(movies) {
                      src="${posterSrc}" 
                      alt="${movie.title || movie.original_title || 'Film'}"
                      loading="lazy"
-                     onerror="this.onerror=null; this.src='https://via.placeholder.com/500x750/1a1a2e/e94560?text=${encodeURIComponent(movie.title || 'Film')}'">
+                     onerror="this.onerror=null; this.src='./images/placeholder.svg'">
                 <div class="movie-info">
                     <h3 class="movie-title" title="${movie.title || movie.original_title}">${movie.title || movie.original_title || 'Titre inconnu'}</h3>
                     <p class="movie-year">${year}</p>
